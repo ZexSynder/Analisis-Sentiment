@@ -32,16 +32,3 @@ Proses analisis dilakukan dengan memanfaatkan algoritma Natural Language Process
 
 ## Dataset
 Dataset berisi ulasan aplikasi Instagram yang diambil dari Google Play Store. Data dikumpulkan menggunakan **web scraping** dengan library `Google-Play-Scraper`.
-
-## 🎨 Hasil Visualisasi
-🔥 **Distribusi Sentimen:**  
-Laporan ini menyajikan bagaimana pengguna merasa tentang aplikasi Instagram:  
-
-- **🟢 Sentimen Positif**: Pengguna puas dengan fitur-fitur aplikasi.  
-- **🔴 Sentimen Negatif**: Keluhan tentang bug, iklan, atau masalah lain.  
-- **⚪ Sentimen Netral**: Review tanpa opini jelas.
-
-📈 **Contoh Visualisasi:**  
-![Sentiment Analysis](https://via.placeholder.com/800x400.png?text=Sentiment+Analysis+Graph)
-
----
