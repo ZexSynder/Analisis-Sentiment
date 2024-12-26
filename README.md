@@ -1,34 +1,53 @@
-# Analisis Sentimen Ulasan Instagram di Play Store
+# Sentiment Analysis Instagram Review
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue) 
 ![Sentiment Analysis](https://img.shields.io/badge/Sentiment--Analysis-NLP-green) 
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-## Deskripsi Proyek
-Proyek ini bertujuan untuk menganalisis sentimen dari ulasan pengguna aplikasi Instagram yang diunduh dari Google Play Store. Analisis dilakukan untuk memahami bagaimana sentimen positif, netral, atau negatif didistribusikan dalam ulasan pengguna terhadap aplikasi ini.
+## Background
+Instagram is a popular social media platform used by millions globally. User reviews on the Google Play Store provide insights into satisfaction and feedback. This project aims to predict the sentiment of Instagram reviews using a multiclass classifier.
 
-Proses analisis dilakukan dengan memanfaatkan algoritma Natural Language Processing (NLP) dan berbagai teknik preprocessing teks. Output dari proyek ini adalah analisis visualisasi sentimen dan insight terkait kepuasan pengguna.
+## Exploratory Data Analysis
+1. What Happened?
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+There are 3 types of sentiments: 227 for positive, 647 for negative, and 126 for neutral.
+3. What words frequently appear in the reviews?
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+Most users type words such as "saya", "tidak", "bisa", "dan", "instagram", "akun", "fitur", and others when writing Instagram reviews.
+5. What positive words often appear in reviews?
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+Most users type words such as "bagus", "aplikasi", "instagram", "akun", "fitur", and others when writing Instagram reviews.
+7. What neutral words often appear in reviews?
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+Most users type words such as "aplikasi", "baik", "update", "instagram", "akun", "fitur", and others when writing Instagram reviews.
+9. What negative words often appear in reviews?
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+Most users type words such as "tolong", "bug", "instagram", "akun", "fitur", “buruk” and others when writing Instagram reviews.
 
-## Workflow Analisis Sentimen
-- Mengumpulkan data ulasan Instagram dari Google Play Store
-- Membersihkan dan memproses data teks
-- Mengklasifikasikan ulasan ke dalam kategori sentimen (positif, negatif, netral)
-- Visualisasi data untuk menunjukkan distribusi sentimen
-- Menggunakan model Machine Learning untuk prediksi sentimen
-- Mengimplementasikan model ke dalam streamlit
+## Preprocessing
+Workflow for Preprocessing Text:
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
 
-## Teknologi yang Digunakan
-- **Bahasa Pemrograman**: Python
-- **Libraries**:
-  - Pandas
-  - NumPy
-  - Scikit-learn
-  - Matplotlib
-  - Seaborn
-  - NLTK
-  - Sastrawi
-- **Tools Lainnya**:
-  - Jupyter Notebook/Google Colab/VScode
+## Feature Extraction
+I did TF-IDF method on feature extraction.
 
-## Dataset
-Dataset berisi ulasan aplikasi Instagram yang diambil dari Google Play Store. Data dikumpulkan menggunakan **web scraping** dengan library `Google-Play-Scraper`.
+## Oversampling with SMOTE
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+This dataset is imbalanced, I use SMOTE to make it balanced.
+
+## Modeling
+I use Random Forest, Decision Tree, Logistic Regression, Naive Bayes, KNeighborsClassifier and Linear SVC for Model Development.
+
+## Evaluation
+- I'm still paying attention to the accuracy score as well since this metric is easier to interpret.
+- The model's performance was evaluated using metrics such as precision, recall, and F1-score.
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+Random Forest Classifier give the highest performance
+
+## Deployment with Streamlit
+To deploy the Streamlit app, I ensured all dependencies were installed, prepared a requirements.txt file, and deployed via Streamlit Sharing, linking a GitHub repository for automated updates.
+![image](https://raw.githubusercontent.com/username/repository/branch/folder/image.png)
+
+## Conclusion
+The RandomForestClassifier demonstrated the best performance with an accuracy of 91.8%, F1-score of 0.9188, recall of 0.9177, and precision of 0.9254. This model exhibits an excellent balance between precision and recall, making it the top choice for sentiment classification. It was deployed via Streamlit, enabling an interactive interface for real-time sentiment predictions (positive, negative, or neutral).
